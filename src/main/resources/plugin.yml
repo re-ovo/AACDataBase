@@ -1,0 +1,21 @@
+#---------------------------------------------------------------------------------------------
+#
+#                                         AACDataBase
+#
+#                A Advanced Database Addon For Advanced Anti Cheat and AACAdditionPro
+#
+#                                          Author: RE
+#                                    SpigotMC: China_Quern
+#                     Discord Server: Discord: https://discord.gg/pEvY55J
+#
+#----------------------------------------------------------------------------------------------
+name: AACDataBase
+version: ${project.version}
+main: com.mcmylx.aacdb.AACDB
+softdepend: [AAC,AACAdditionPro,ConditionalCommands]
+authors: [RE]
+description: A Mysql Addon for Advanced Anti Cheat (AAC)
+commands:
+  aacdb:
+    usage: /<command> arg
+    description: AAC DB Main Command

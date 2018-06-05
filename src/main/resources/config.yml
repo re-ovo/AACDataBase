@@ -1,0 +1,76 @@
+#---------------------------------------------------------------------------------------------
+#
+#                                         AACDataBase
+#
+#                A Advanced Database Addon For Advanced Anti Cheat and AACAdditionPro
+#
+#                                          Author: RE
+#                                    SpigotMC: China_Quern
+#                         Discord Server: https://discord.gg/pEvY55J
+#
+#----------------------------------------------------------------------------------------------
+
+#Check update
+#CHECK AACDB's newest version on startup
+update: true
+
+#Mysql Database Setting
+mysql:
+  #Database Address
+  address: 'localhost'
+
+  #Database Port
+  port: 3306
+
+  #Database Name
+  database: aacdata
+
+  #User Name
+  user: 'root'
+
+  #Password
+  password: 'root'
+
+  #Max connections in connection pool
+  #If you don't know what is it,don't touch it
+  max_connections: 10
+
+  #Table NAME Prefix
+  table_prefix: 'aacdb_'
+
+#Data Record Switch
+#You can choose what data you need to save to database
+data:
+  #Record AAC VL (If you installed AACAdditionPro,it will sync aacadditionpro's vl too)
+  #AACDB will save players' vl data,when they join server,AACDB will sync the vl data to AAC/AACAdditionPro
+  record_vl: true
+
+  #Record AAC Kick Command
+  #AACDB will record kick reason,kick timestamp,player name,you can look up every players' kick history by command
+  record_aackick: true
+
+  #Record AAC Heuristic Data
+  #AACDB will record AAC Heuristic check data: heuristic_pattern , accuracy , timestamp , player name
+  record_heuristic: true
+
+#Auto Punishment
+#This feature can punish the player who kicked by AAC frequently
+punishment:
+  #Enable this feature
+  enable: true
+
+  #Punish threshold
+  #If player get kicked more than threshold value in one hour
+  #He will get punished
+  threshold: 5
+
+  #Punish Command
+  #Placeholder: %player% = Player Name
+  commands:
+  - 'aacstaffnotify AACDB has punished player %player% because he get kicked by AAC frequently'
+  - 'litebans:ban %player% UnfairAdvantage[Ban by AAC DB] 24h'
+
+#Disable Database
+#If the mode is ture,the plugin will not work,this option is just for author to test some feature
+#Dont touch it!!!!
+#debug: false
