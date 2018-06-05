@@ -25,7 +25,7 @@ public class DataManager {
     }
 
     /**
-     * 创建数据表
+     * Create tables
      */
     public void createTables() {
         if (MainConfig.DEBUG) {
@@ -62,10 +62,10 @@ public class DataManager {
     }
 
     /**
-     * 查询玩家VL
+     * fetch player's vl data from database
      *
-     * @param player 要查询VL的玩家
-     * @return AACVL 对象
+     * @param player Player Object
+     * @return AACVL Object
      */
     public AACVL fetchData(Player player) {
         AACVL aacvl = null;
@@ -94,9 +94,9 @@ public class DataManager {
     }
 
     /**
-     * 保存VL到数据库
+     * Save AACVL Object to database
      *
-     * @param aacvl AAC VL对象
+     * @param aacvl AACVL Object
      */
     public void saveAACVL(AACVL aacvl) {
         try {
@@ -169,6 +169,11 @@ public class DataManager {
         }
     }
 
+    /**
+     * Remove player's vl data
+     *
+     * @param uuid player's uuid
+     */
     public void removeVLData(String uuid) {
         try {
             Connection connection = AACDB.getInstance().getDatabaseManager().getConnection();
@@ -185,6 +190,11 @@ public class DataManager {
         }
     }
 
+    /**
+     * Clear player's all data
+     *
+     * @param player Player name
+     */
     public void clear(String player) {
         try {
             Connection connection = AACDB.getInstance().getDatabaseManager().getConnection();

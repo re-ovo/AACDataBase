@@ -98,13 +98,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.allatori</groupId>
-            <artifactId>allatori-annotation</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>D:/MinecraftDev/obfuscator/Allatori-6.5/lib/allatori-annotations.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>com.codahale.metrics</groupId>
             <artifactId>metrics-healthchecks</artifactId>
             <version>3.0.2</version>
