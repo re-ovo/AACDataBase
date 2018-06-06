@@ -44,10 +44,12 @@ public class JoinListener implements Listener {
                     int kickAmount = aacKickList.size();
                     if (kickAmount >= MainConfig.threshold) {
                         //Punishment
-                        LogUtil.log("Player " + player.getName() + "'s recent kick times amount are larger than threshold,AAC DB will punish the player");
-                        for (String cmd : MainConfig.commands) {
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("%player%", player.getName()));
-                        }
+                        Bukkit.getScheduler().runTask(AACDB.getInstance(),()->{
+                            LogUtil.log("Player " + player.getName() + "'s recent kick times amount are larger than threshold,AAC DB will punish the player");
+                            for (String cmd : MainConfig.commands) {
+                                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replace("%player%", player.getName()));
+                            }
+                        });
                     }
                 });
             }
