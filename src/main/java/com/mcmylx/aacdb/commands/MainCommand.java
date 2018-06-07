@@ -1,9 +1,6 @@
 package com.mcmylx.aacdb.commands;
 
-import com.mcmylx.aacdb.commands.subs.ClearDataCommand;
-import com.mcmylx.aacdb.commands.subs.LookupHeuristicCommand;
-import com.mcmylx.aacdb.commands.subs.LookupKickCommand;
-import com.mcmylx.aacdb.commands.subs.ReloadCommand;
+import com.mcmylx.aacdb.commands.subs.*;
 import com.mcmylx.aacdb.utils.LogUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,6 +21,7 @@ public class MainCommand implements CommandExecutor {
         this.subCommands.add(new ClearDataCommand());
         this.subCommands.add(new LookupKickCommand());
         this.subCommands.add(new LookupHeuristicCommand());
+        this.subCommands.add(new CallKickCommand());
         this.subCommands.add(new ReloadCommand());
 
         LogUtil.log("Registered commands");
