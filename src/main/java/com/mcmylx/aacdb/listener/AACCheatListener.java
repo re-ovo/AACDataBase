@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.server.ServerCommandEvent;
 
 public class AACCheatListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
@@ -50,7 +49,7 @@ public class AACCheatListener implements Listener {
         handleKick(cmd);
     }
 
-    public static void handleKick(String cmd){
+    public static void handleKick(String cmd) {
         if (!cmd.toLowerCase().startsWith("aackick")) {
             return;
         }

@@ -25,7 +25,7 @@ public class AACAdditionProHooker {
             return;
         }
         ENABLE = true;
-        if(ENABLE){
+        if (ENABLE) {
             LogUtil.log("Hooked with AACAdditionPro");
         }
     }
@@ -47,10 +47,16 @@ public class AACAdditionProHooker {
         }
     }
 
-    public static Map<String,Integer> getVLMap(Player player){
-        Map<String,Integer> vlMap = new HashMap<>();
-        for(ModuleType moduleType : ModuleType.values()){
-            vlMap.put(moduleType.name(),AACAdditionProApi.getVL(player,moduleType));
+    public static Map<String, Integer> getVLMap(Player player) {
+        Map<String, Integer> vlMap = new HashMap<>();
+        for (ModuleType moduleType : ModuleType.values()) {
+            if (moduleType == ModuleType.LOG_BOT) {
+                continue;
+            }
+            if (moduleType.name().contains("CONTROL")) {
+                continue;
+            }
+            vlMap.put(moduleType.name(), AACAdditionProApi.getVL(player, moduleType));
         }
         return vlMap;
     }
