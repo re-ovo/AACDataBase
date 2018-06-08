@@ -50,7 +50,7 @@ public class AACAdditionProHooker {
     public static Map<String, Integer> getVLMap(Player player) {
         Map<String, Integer> vlMap = new HashMap<>();
         for (ModuleType moduleType : ModuleType.values()) {
-            if (moduleType == ModuleType.LOG_BOT) {
+            if (moduleType == ModuleType.LOG_BOT || moduleType == ModuleType.PER_HEURISTIC_COMMANDS) {
                 continue;
             }
             if (moduleType.name().contains("CONTROL")) {
