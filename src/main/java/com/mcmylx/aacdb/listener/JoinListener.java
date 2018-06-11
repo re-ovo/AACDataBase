@@ -42,6 +42,7 @@ public class JoinListener implements Listener {
                 Bukkit.getScheduler().runTaskAsynchronously(AACDB.getInstance(), () -> {
                     List<AACKick> aacKickList = AACDB.getInstance().getDataManager().getRecentAACKicks(player);
                     int kickAmount = aacKickList.size();
+                    LogUtil.log("DEBUG: Recent Kick times: "+kickAmount);
                     if (kickAmount >= MainConfig.threshold) {
                         //Punishment
                         Bukkit.getScheduler().runTask(AACDB.getInstance(),()->{

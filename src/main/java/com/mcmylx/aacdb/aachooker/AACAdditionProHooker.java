@@ -56,7 +56,12 @@ public class AACAdditionProHooker {
             if (moduleType.name().contains("CONTROL")) {
                 continue;
             }
-            vlMap.put(moduleType.name(), AACAdditionProApi.getVL(player, moduleType));
+            try {
+                int vl = AACAdditionProApi.getVL(player, moduleType);
+                vlMap.put(moduleType.name(), vl);
+            }catch (Exception e){
+
+            }
         }
         return vlMap;
     }
