@@ -42,7 +42,8 @@ public class AACAdditionProHooker {
         }
         for (ModuleType moduleType : ModuleType.values()) {
             if (vls.containsKey(moduleType.name())) {
-                AACAdditionProApi.setVl(player, moduleType, vls.get(moduleType.name()));
+                Number number = vls.get(moduleType.name());
+                AACAdditionProApi.setVl(player, moduleType, number.intValue());
             }
         }
     }
