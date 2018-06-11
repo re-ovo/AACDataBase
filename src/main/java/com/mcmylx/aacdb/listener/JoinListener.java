@@ -36,13 +36,13 @@ public class JoinListener implements Listener {
             Bukkit.getScheduler().runTask(AACDB.getInstance(), () -> {
                 AACHooker.syncVL(player, finalAacvl.getVls());
                 AACAdditionProHooker.syncVL(player, finalAacvl.getVls());
-                LogUtil.log("(DEBUG) Sync Player VL Data: " + player.getName());
+                //LogUtil.log("(DEBUG) Sync Player VL Data: " + player.getName());
             });
             if (MainConfig.enable_punishment) {
                 Bukkit.getScheduler().runTaskAsynchronously(AACDB.getInstance(), () -> {
                     List<AACKick> aacKickList = AACDB.getInstance().getDataManager().getRecentAACKicks(player);
                     int kickAmount = aacKickList.size();
-                    LogUtil.log("DEBUG: Recent Kick times: "+kickAmount);
+                    LogUtil.log("(DEBUG) Recent Kick times: "+kickAmount);
                     if (kickAmount >= MainConfig.threshold) {
                         //Punishment
                         Bukkit.getScheduler().runTask(AACDB.getInstance(),()->{

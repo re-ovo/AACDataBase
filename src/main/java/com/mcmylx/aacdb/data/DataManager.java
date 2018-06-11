@@ -275,7 +275,7 @@ public class DataManager {
         List<AACKick> kicksList = new ArrayList<>();
         long minTime = System.currentTimeMillis() - (3600 * 1000);
         String SQL =
-                "SELECT * FROM "+this.kickTableName+" WHERE uuid='"+player.getName()+"' AND timestamp>="+minTime+" ORDER BY timestamp DESC";
+                "SELECT * FROM "+this.kickTableName+" WHERE uuid='"+player.getUniqueId().toString()+"' AND timestamp>="+minTime+" ORDER BY timestamp DESC";
         try {
             Connection connection = AACDB.getInstance().getDatabaseManager().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
