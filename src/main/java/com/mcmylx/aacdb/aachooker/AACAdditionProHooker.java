@@ -2,8 +2,8 @@ package com.mcmylx.aacdb.aachooker;
 
 import com.mcmylx.aacdb.config.MainConfig;
 import com.mcmylx.aacdb.utils.LogUtil;
-import de.photon.AACAdditionPro.ModuleType;
 import de.photon.AACAdditionPro.api.AACAdditionProApi;
+import de.photon.AACAdditionPro.modules.ModuleType;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
@@ -40,7 +40,7 @@ public class AACAdditionProHooker {
         if (!AACAdditionProApi.isLoaded()) {
             return;
         }
-        for (ModuleType moduleType : ModuleType.values()) {
+        for (ModuleType moduleType : ModuleType.VL_MODULETYPES) {
             if (vls.containsKey(moduleType.name())) {
                 Number number = vls.get(moduleType.name());
                 AACAdditionProApi.setVl(player, moduleType, number.intValue());
@@ -50,13 +50,7 @@ public class AACAdditionProHooker {
 
     public static Map<String, Integer> getVLMap(Player player) {
         Map<String, Integer> vlMap = new HashMap<>();
-        for (ModuleType moduleType : ModuleType.values()) {
-            if (moduleType == ModuleType.LOG_BOT || moduleType == ModuleType.PER_HEURISTIC_COMMANDS) {
-                continue;
-            }
-            if (moduleType.name().contains("CONTROL")) {
-                continue;
-            }
+        for (ModuleType moduleType : ModuleType.VL_MODULETYPES) {
             try {
                 int vl = AACAdditionProApi.getVL(player, moduleType);
                 vlMap.put(moduleType.name(), vl);
