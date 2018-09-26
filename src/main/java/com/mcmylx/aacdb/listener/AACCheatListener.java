@@ -16,7 +16,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
 public class AACCheatListener implements Listener {
-    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+    //@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+    //Removed this listener,because AAC removed the heuristics check in 3.5.0
     public void onHack(PlayerViolationEvent e) {
         if (MainConfig.DEBUG) {
             return;
