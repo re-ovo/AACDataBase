@@ -43,7 +43,13 @@ public class AACAdditionProHooker {
         for (ModuleType moduleType : ModuleType.VL_MODULETYPES) {
             if (vls.containsKey(moduleType.name())) {
                 Number number = vls.get(moduleType.name());
-                AACAdditionProApi.setVl(player, moduleType, number.intValue());
+                try {
+                    AACAdditionProApi.setVl(player, moduleType, number.intValue());
+                }catch (IllegalArgumentException e){
+                    // Ignore it....
+                    // I don't know why AACAdditionPro throws this exception
+                    // :D
+                }
             }
         }
     }

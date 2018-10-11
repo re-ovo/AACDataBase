@@ -6,7 +6,7 @@
 
     <groupId>com.mcmylx</groupId>
     <artifactId>aacdb</artifactId>
-    <version>1.6</version>
+    <version>1.6.1</version>
     <packaging>jar</packaging>
 
     <name>AACDB</name>
@@ -87,9 +87,9 @@
         <dependency>
             <groupId>de.Photon</groupId>
             <artifactId>AACAdditionPro-api</artifactId>
-            <version>3.5.1</version>
+            <version>4.4.0</version>
             <scope>system</scope>
-            <systemPath>D:/MinecraftDev/libs/AACAdditionPro-4.3.1.jar</systemPath>
+            <systemPath>D:/MinecraftDev/libs/AACAdditionPro-4.4.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
